@@ -106,7 +106,7 @@ func (a *App) handleEvents(gtx layout.Context) {
 	// Botão de seleção de origem
 	if a.selectSrcBtn.Clicked(gtx) {
 		go func() {
-			if path := selectFolder("Selecione a pasta com o código Go"); path != "" {
+			if path := selectFolder("Selecione a pasta com o código"); path != "" {
 				a.mu.Lock()
 				a.srcPath = path
 				a.status = fmt.Sprintf("✓ Origem selecionada: %s", filepath.Base(path))

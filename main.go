@@ -7,7 +7,6 @@ import (
 	"gioui.org/app"
 	"gioui.org/font/gofont"
 	"gioui.org/text"
-	"gioui.org/unit"
 	"gioui.org/widget/material"
 
 	"go-context-generator/internal/ui"
@@ -17,8 +16,7 @@ func main() {
 	go func() {
 		w := app.NewWindow(
 			app.Title("Go Context Generator Pro"),
-			app.Size(unit.Dp(1000), unit.Dp(700)),
-			app.MinSize(unit.Dp(800), unit.Dp(600)),
+			app.Maximized.Option(),
 		)
 
 		th := material.NewTheme()
