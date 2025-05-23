@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "embed"
 	"log"
 	"os"
 
@@ -11,6 +12,8 @@ import (
 
 	"go-context-generator/internal/ui"
 )
+
+var iconBytes []byte
 
 func main() {
 	go func() {

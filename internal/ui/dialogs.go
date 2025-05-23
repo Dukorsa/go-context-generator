@@ -48,25 +48,6 @@ func dirExists(path string) bool {
 	return info.IsDir()
 }
 
-// getDefaultSourcePath retorna um caminho padrão para a pasta de origem do código.
-// Tenta o diretório de trabalho atual, depois o diretório home do usuário.
-func getDefaultSourcePath() string {
-	if cwd, err := os.Getwd(); err == nil {
-		if dirExists(cwd) {
-			return cwd
-		}
-	}
-
-	if home, err := os.UserHomeDir(); err == nil {
-		if dirExists(home) {
-			return home
-		}
-	}
-
-	// Fallback para o diretório atual relativo, caso os anteriores falhem.
-	return "."
-}
-
 // getDefaultDestPath retorna um caminho padrão para a pasta de destino dos arquivos de contexto.
 // Cria uma pasta "go-contexts" no Desktop ou Documentos do usuário, dependendo do SO.
 func getDefaultDestPath() string {

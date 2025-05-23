@@ -165,7 +165,7 @@ func (a *App) generateContextFiles() {
 	a.progress = 0
 	a.filesFound = 0
 	a.filesGenerated = 0
-	a.status = "🔍 Escaneando arquivos Go..."
+	a.status = "🔍 Escaneando arquivos de código fonte..."
 	a.mu.Unlock()
 
 	defer func() {
@@ -201,14 +201,14 @@ func (a *App) generateContextFiles() {
 
 	if len(files) == 0 {
 		a.mu.Lock()
-		a.status = "⚠️ Nenhum arquivo Go encontrado na pasta selecionada"
+		a.status = "⚠️ Nenhum arquivo de código fonte encontrado na pasta selecionada"
 		a.mu.Unlock()
 		return
 	}
 
 	a.mu.Lock()
 	a.filesFound = len(files)
-	a.status = fmt.Sprintf("🔄 Encontrados %d arquivos Go. Gerando contextos...", len(files))
+	a.status = fmt.Sprintf("🔄 Encontrados %d arquivos de código fonte. Gerando contextos...", len(files))
 	a.mu.Unlock()
 
 	// Gerar arquivos de contexto

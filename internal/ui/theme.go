@@ -419,11 +419,11 @@ func (a *App) layoutSettings(gtx layout.Context) layout.Dimensions {
 				}),
 				layout.Rigid(layout.Spacer{Height: largePadding}.Layout),
 				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					return a.layoutCheckboxItem(gtx, &a.includeTests, "Incluir Arquivos de Teste", "Processa arquivos com sufixo `_test.go` juntamente com o código fonte principal.")
+					return a.layoutCheckboxItem(gtx, &a.includeTests, "Incluir Arquivos de Teste", "Processa arquivos de teste (ex: *_test.*, *.spec.*) juntamente com o código fonte.")
 				}),
 				layout.Rigid(layout.Spacer{Height: largePadding}.Layout),
 				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					return a.layoutCheckboxItem(gtx, &a.minifyOutput, "Otimizar Saída para IA (Minify)", "Remove espaços em branco e quebras de linha desnecessários para reduzir o tamanho do token.")
+					return a.layoutCheckboxItem(gtx, &a.minifyOutput, "Otimizar Saída para IA (Minify)", "Remove espaços em branco e quebras de linha desnecessários. A eficácia varia por linguagem.")
 				}),
 				layout.Flexed(1, func(gtx layout.Context) layout.Dimensions { // Espaço flexível para empurrar o botão para baixo
 					return layout.Spacer{Height: xlargePadding}.Layout(gtx)
